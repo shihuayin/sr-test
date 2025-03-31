@@ -1,0 +1,52 @@
+
+id,provider_name,product_name,year,original_currency,original_payment,original_benchmark,exchange_rate,payment_in_eur,benchmark_in_eur
+1,Globex Brokers,Global Indexes,2022,GBP,250300,300000,1.19,297857,357000
+2,Globex Brokers,Global Indexes,2023,GBP,270324,324000,1.13,305466.12,366120
+3,Globex Brokers,Global Indexes,2024,GBP,291950,349920,1.15,335742.5,402408
+4,Globex Brokers,DataTrendz,2022,USD,190000,120000,0.88,167200,105600
+5,Globex Brokers,DataTrendz,2023,USD,205200,129600,0.93,190836,120528
+6,Globex Brokers,DataTrendz,2024,USD,221616,139968,0.9,199454.4,125971.2
+7,Globex Brokers,TradeInsight,2022,EUR,20000,40000,1,20000,40000
+8,Globex Brokers,TradeInsight,2023,EUR,54000,43200,1,54000,43200
+9,Globex Brokers,EconoMetrics,2022,GBP,100000,78650,1.19,119000,93593.5
+10,Globex Brokers,EconoMetrics,2023,GBP,68900,78650,1.13,77857,88874.5
+11,Globex Brokers,EconoMetrics,2024,GBP,93000,86515,1.15,106950,99492.25
+12,Tyrell Insights,QuantiFlow,2022,GBP,230000,1234556,1.19,273700,1469121.64
+13,Tyrell Insights,QuantiFlow,2023,GBP,248400,1333320,1.13,280692,1506651.6
+14,Tyrell Insights,QuantiFlow,2024,GBP,268272,1439986,1.15,308512.8,1655983.9
+15,Tyrell Insights,PriceGrid,2023,EUR,123400,220000,1,123400,220000
+16,Tyrell Insights,PriceGrid,2024,EUR,133272,237600,1,133272,237600
+17,Tyrell Insights,StockSage,2022,USD,90000,100000,0.88,79200,88000
+18,Tyrell Insights,StockSage,2023,USD,97200,108000,0.93,90396,100440
+19,Tyrell Insights,StockSage,2024,USD,120000,116640,0.9,108000,104976
+20,Tyrell Insights,MarketLytics,2021,USD,200000,220000,0.82,164000,180400
+21,Tyrell Insights,MarketLytics,2022,USD,216000,237600,0.88,190080,209088
+22,Tyrell Insights,MarketLytics,2023,USD,233280,256608,0.93,216950.4,238645.44
+23,Tyrell Insights,MarketLytics,2024,USD,251942,277137,0.9,226747.8,249423.3
+24,Tyrell Insights,PriceIQ,2021,EUR,10000,7000,1,10000,7000
+25,Tyrell Insights,PriceIQ,2022,EUR,10800,7560,1,10800,7560
+26,Tyrell Insights,PriceIQ,2023,EUR,11664,8165,1,11664,8165
+27,Tyrell Insights,PriceIQ,2024,EUR,9700,8818,1,9700,8818
+28,Skynet Market Solutions Alpha,AlphaData,2022,GBP,150000,200000,1.19,178500,238000
+29,Skynet Market Solutions Alpha,AlphaData,2023,GBP,147000,200000,1.13,166110,226000
+30,Skynet Market Solutions Alpha,AlphaData,2024,GBP,190000,220000,1.15,218500,253000
+31,Skynet Market Solutions Alpha,FinScope,2022,USD,22000,20000,0.88,19360,17600
+32,Skynet Market Solutions Alpha,FinScope,2023,USD,23760,22000,0.93,22096.8,20460
+33,Skynet Market Solutions Alpha,FinScope,2024,USD,25661,24200,0.9,23094.9,21780
+34,Skynet Market Solutions Alpha,EconoVision,2022,USD,100000,100000,0.88,88000,88000
+35,Skynet Market Solutions Alpha,EconoVision,2023,USD,100500,101000,0.93,93465,93930
+36,Skynet Market Solutions Alpha,EconoVision,2024,USD,101003,102010,0.9,90902.7,91809
+37,Skynet Market Solutions Alpha,TradeWire,2021,EUR,15000,25000,1,15000,25000
+38,Skynet Market Solutions Alpha,TradeWire,2022,EUR,20000,25500,1,20000,25500
+39,Skynet Market Solutions Alpha,TradeWire,2023,EUR,15000,28000,1,15000,28000
+40,Skynet Market Solutions Alpha,TradeWire,2024,EUR,22000,28000,1,22000,28000
+41,Gringotts Research Gold Index,DataSpectrum,2022,USD,45632,50000,0.88,40156.16,44000
+42,Gringotts Research Gold Index,DataSpectrum,2023,USD,55690,65000,0.93,51791.7,60450
+43,Gringotts Research Gold Index,MarketSphere,2022,GBP,123123,125000,1.19,146516.37,148750
+44,Gringotts Research Gold Index,MarketSphere,2023,GBP,132973,135000,1.13,150259.49,152550
+45,Gringotts Research Gold Index,MarketSphere,2024,GBP,143611,145800,1.15,165152.65,167670
+46,Gringotts Research Gold Index,PriceWave,2022,GBP,22000,20000,1.19,26180,23800
+47,Gringotts Research Gold Index,PriceWave,2023,GBP,27000,34000,1.13,30510,38420
+48,Gringotts Research Gold Index,PriceWave,2024,GBP,38000,35000,1.15,43700,40250
+49,Gringotts Research Gold Index,DataVista,2022,EUR,45000,20000,1,45000,20000
+50,Gringotts Research Gold Index,DataVista,2023,EUR,45000,23000,1,45000,23000
