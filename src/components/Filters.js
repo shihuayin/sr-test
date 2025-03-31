@@ -33,11 +33,13 @@ function Filters() {
   return (
     <div className="my-6 bg-[#162B49] rounded-md p-4 shadow space-y-4">
       {/* provider */}
-      <div className="flex items-center mb-4">
+      <div className="flex flex-col items-center md:flex-row md:items-center  mb-4 space-y-2 md:space-y-0">
         {/* label */}
-        <h4 className="w-1/6 text-gray-200  font-semibold">PROVIDER</h4>
+        <h4 className="w-full md:w-1/6 text-gray-200  font-semibold">
+          PROVIDER
+        </h4>
         {/* button */}
-        <div className="w-5/6 grid grid-flow-col auto-cols-auto gap-2">
+        <div className="flex flex-wrap gap-2 w-full md:w-5/6">
           {providers.map((provider) => (
             <button
               key={provider}
@@ -51,11 +53,11 @@ function Filters() {
       </div>
 
       {/* year*/}
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0">
         {/* label */}
-        <h4 className="w-1/6 text-gray-200  font-semibold">YEAR</h4>
+        <h4 className="w-full md:w-1/6 text-gray-200  font-semibold">YEAR</h4>
         {/* button */}
-        <div className="w-5/6 grid grid-flow-col auto-cols-auto gap-2">
+        <div className="flex flex-wrap gap-2 w-full md:w-5/6">
           {/* single button "all" */}
           <button
             className={btnClass(selectedYear === "all")}
