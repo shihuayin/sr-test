@@ -1,4 +1,3 @@
-````markdown
 # Substantive Research Test Tech
 
 This is a React-based dashboard for analyzing payment and benchmark data.
@@ -31,7 +30,6 @@ The project is deployed on Vercel. Access the live application at: [https://sr-t
    ```bash
    git clone https://github.com/shihuayin/sr-test.git
    ```
-````
 
 2. **Navigate to the project directory and install dependencies:**
 
