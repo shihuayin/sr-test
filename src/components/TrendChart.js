@@ -12,70 +12,32 @@ import {
 
 function TrendChart() {
   //display by year or product
-  const { benchmarks, selectedProvider, selectedYear, convertAmount } =
-    useContext(DataContext);
+  const { filteredData, selectedYear } = useContext(DataContext);
 
   let chartData = [];
 
   // select all year, display by year
   if (selectedYear === "all") {
     const dataByYear = {};
-    benchmarks
-      .filter((item) => item.provider_name === selectedProvider)
-      .forEach((item) => {
-        if (!dataByYear[item.year]) {
-          dataByYear[item.year] = { year: item.year, payment: 0, benchmark: 0 };
-        }
-
-        //payment
-        dataByYear[item.year].payment += convertAmount(
-          item.payment,
-          item.currency.name,
-          item.year
-        );
-
-        //benchmark
-        dataByYear[item.year].benchmark += convertAmount(
-          item.benchmark,
-          item.currency.name,
-          item.year
-        );
-      });
+    filteredData.forEach((item) => {
+      if (!dataByYear[item.year]) {
+        dataByYear[item.year] = { year: item.year, payment: 0, benchmark: 0 };
+      }
+      dataByYear[item.year].payment += item.payment_converted;
+      dataByYear[item.year].benchmark += item.benchmark_converted;
+    });
 
     //sort by year
     chartData = Object.values(dataByYear).sort((a, b) => a.year - b.year);
   }
   //select single year and all product
   else {
-    const dataByProduct = {};
-    benchmarks
-      .filter(
-        (item) =>
-          item.provider_name === selectedProvider && item.year === selectedYear
-      )
-      .forEach((item) => {
-        if (!dataByProduct[item.product_name]) {
-          dataByProduct[item.product_name] = {
-            product: item.product_name,
-            payment: 0,
-            benchmark: 0,
-          };
-        }
-
-        dataByProduct[item.product_name].payment += convertAmount(
-          item.payment,
-          item.currency.name,
-          item.year
-        );
-
-        dataByProduct[item.product_name].benchmark += convertAmount(
-          item.benchmark,
-          item.currency.name,
-          item.year
-        );
-      });
-
-    chartData = Object.values(dataByProduct);
+    // single year , unique product do not need sum
+    chartData = filteredData.map((item) => ({
+      product: item.product_name,
+      payment: item.payment_converted,
+      benchmark: item.benchmark_converted,
+    }));
   }
 
   return (

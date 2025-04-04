@@ -28,32 +28,16 @@ export const DataProvider = ({ children }) => {
     loadData();
   }, []);
 
-  // currency map
-  //from product
-  const currencyIdMap = {
-    USD: 1,
-    GBP: 2,
-    EUR: 3,
-  };
-
   //money convert
-  const convertAmount = (amount, fromCurrency, year) => {
+  const convertAmount = (amount, currencyId, year) => {
     // if eur return directly
-    if (fromCurrency === "EUR") return amount;
+    if (currencyId === 3) return amount;
 
-    //if not, get rate first
-    // {
-    //     from_currency_id: 1,
-    //     to_currency_id: 3,
-    //     year: 2021,
-    //     exchange_rate: 0.82
-    //   }
+    // exchange is one record of  exchangeRates
     const exchange = exchangeRates.find(
       (er) =>
-        //currencyIdMap[fromCurrency]是根据变量 fromCurrency 的值（例如 "USD"）获取对应的数字 ID（例如 1）
-        er.from_currency_id === currencyIdMap[fromCurrency] &&
-        er.to_currency_id === currencyIdMap["EUR"] &&
-        er.year === parseInt(year)
+        //get from currency id and year to find rate, to currency fix 3
+        er.from_currency_id === currencyId && er.year === parseInt(year)
     );
 
     return Math.round(amount * exchange.exchange_rate);
@@ -71,13 +55,13 @@ export const DataProvider = ({ children }) => {
       //convert payment
       const paymentConverted = convertAmount(
         item.payment,
-        item.currency.name,
+        item.currency.id,
         item.year
       );
       //convert benchmark
       const benchmarkConverted = convertAmount(
         item.benchmark,
-        item.currency.name,
+        item.currency.id,
         item.year
       );
 
