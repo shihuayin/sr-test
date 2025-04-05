@@ -4,6 +4,7 @@ import { DataContext } from "../context/DataContext";
 function Cards() {
   const { filteredData } = useContext(DataContext);
 
+  //sum
   const totalPayment = filteredData.reduce(
     (sum, item) => sum + item.payment_converted,
     0

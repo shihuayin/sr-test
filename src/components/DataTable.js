@@ -3,6 +3,9 @@ import { DataContext } from "../context/DataContext";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
+// same logic as card
+// different is card do sum()
+// table display directly
 function DataTable() {
   const { filteredData } = useContext(DataContext);
   const formatCurrency = (num) => `€${Math.abs(num).toLocaleString()}`;
@@ -54,7 +57,7 @@ function DataTable() {
       formatCurrency(item.benchmark_converted),
       item.diff_converted >= 0
         ? `+${formatCurrency(item.diff_converted)}`
-        : formatCurrency(item.diff_converted),
+        : `-${formatCurrency(item.diff_converted)}`,
     ]);
 
     autoTable(doc, {

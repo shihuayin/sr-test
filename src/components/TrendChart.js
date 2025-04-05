@@ -20,9 +20,11 @@ function TrendChart() {
   if (selectedYear === "all") {
     const dataByYear = {};
     filteredData.forEach((item) => {
+      // if the year not in array
       if (!dataByYear[item.year]) {
         dataByYear[item.year] = { year: item.year, payment: 0, benchmark: 0 };
       }
+      // if year in, excute sum
       dataByYear[item.year].payment += item.payment_converted;
       dataByYear[item.year].benchmark += item.benchmark_converted;
     });
@@ -30,9 +32,9 @@ function TrendChart() {
     //sort by year
     chartData = Object.values(dataByYear).sort((a, b) => a.year - b.year);
   }
-  //select single year and all product
+  //select single year
   else {
-    // single year , unique product do not need sum
+    // single year , unique product do not need sum， display directly
     chartData = filteredData.map((item) => ({
       product: item.product_name,
       payment: item.payment_converted,
@@ -70,6 +72,7 @@ function TrendChart() {
             cursor={{ fill: "transparent", width: 40 }}
           />
           <Legend />
+          {/* dataKey ：payment / benchmark */}
           <Bar dataKey="payment" fill="#4ADEDE" barSize={30} />
           <Bar dataKey="benchmark" fill="#64748B" barSize={30} />
         </BarChart>

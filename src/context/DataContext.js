@@ -8,7 +8,7 @@ export const DataProvider = ({ children }) => {
   const [exchangeRates, setExchangeRates] = useState([]);
   const [selectedProvider, setSelectedProvider] = useState("Globex Brokers");
   const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedCurrency] = useState("EUR");
+  // const [selectedCurrency] = useState("EUR");
 
   //load data from api
   useEffect(() => {
@@ -30,16 +30,17 @@ export const DataProvider = ({ children }) => {
 
   //money convert
   const convertAmount = (amount, currencyId, year) => {
-    // if eur return directly
+    // (1) if eur return directly
     if (currencyId === 3) return amount;
 
-    // exchange is one record of  exchangeRates
+    //(2) if not eur, find exchangrate
     const exchange = exchangeRates.find(
       (er) =>
-        //get from currency id and year to find rate, to currency fix 3
+        //use currencyId and year to find exchange
         er.from_currency_id === currencyId && er.year === parseInt(year)
     );
 
+    // return moneny
     return Math.round(amount * exchange.exchange_rate);
   };
 
@@ -83,7 +84,7 @@ export const DataProvider = ({ children }) => {
         setSelectedYear,
         selectedProvider,
         setSelectedProvider,
-        selectedCurrency,
+        // selectedCurrency,
         filteredData,
         convertAmount,
       }}
